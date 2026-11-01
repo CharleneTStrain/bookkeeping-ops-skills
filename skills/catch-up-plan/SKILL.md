@@ -202,7 +202,7 @@ In chat:
 4. Anything that needs a CPA now.
 5. The workbook.
 
-If they gave details the context file doesn't have, or that differ from it (a new account, a finished month, a new deadline, a new bookkeeper), offer to update `.agents/bookkeeping-ops-context.md` so the next skill starts current. As months get locked, offer to update the last finished month there too.
+If they gave details the context file doesn't have, or that differ from it (a new account, a finished month, a new deadline, a new bookkeeper), offer to update `.agents/bookkeeping-ops-context.md` so the next skill starts current. As months are marked Done, offer to update the last finished month there too.
 
 ## Rules
 

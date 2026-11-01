@@ -2,7 +2,7 @@
 name: bookkeeping-ops-context
 description: Create or update the business bookkeeping context file every other skill in this library reads first — what the business is and how it's set up, its accounts and payment processors, bookkeeping software, who does the books and taxes, transaction volume, payroll and contractors, sales tax, and upcoming deadlines. Use at the start before using other bookkeeping ops skills, when someone says "set up my bookkeeping context," "here's my business," "remember my accounts," "my bookkeeper quit," or "update my deadlines," or whenever a skill keeps asking for the same background. It creates `.agents/bookkeeping-ops-context.md`.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Bookkeeping ops context
@@ -75,7 +75,7 @@ Cover: bookkeeper, CPA or tax preparer, payroll provider. Note any provider that
 ## Deadlines
 | Deadline | Date | Set by | Notes |
 |---|---|---|---|
-Cover: tax return and extension dates, quarterly estimated taxes, any IRS or state letter (with its response date), loan applications, and accountant requests.
+Cover: tax return and extension dates, quarterly estimated taxes, 1099 forms for contractors, any IRS or state letter (with its response date), loan applications, and accountant requests. Record the actual date for this year, not just the usual one, since dates move when they fall on a weekend or holiday.
 
 ## Open questions
 Things the business hasn't settled that skills should flag, not guess.

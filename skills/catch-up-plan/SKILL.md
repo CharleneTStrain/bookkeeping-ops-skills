@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Catch-up plan
@@ -46,11 +46,22 @@ After the two questions, place them in one of three paths. Ask one question if i
 | Extension deadline for that return | October 15 | IRS |
 | S-corp or partnership return | March 15 (extension: September 15) | IRS |
 | Quarterly estimated taxes | April 15, June 15, September 15, January 15 | IRS |
+| 1099-NEC forms to contractors and the IRS | January 31 | IRS |
 | IRS or state letter | The response date printed on the letter | IRS or state |
 | Loan application | The date the lender gave | Lender |
 | Accountant request | The date the CPA gave | CPA |
 
-Look up this year's actual dates before using them: dates move to the next business day when they fall on a weekend or holiday, and disaster areas sometimes get extensions. For SBA loans, look up how recent the lender's statements must be (the current checklist asks for statements no more than 120 days old) and cite it. If there's no outside deadline, set one 6 weeks out so the plan has a finish line.
+Look up this year's actual dates on IRS.gov before using them: dates move to the next business day when they fall on a weekend or holiday, and disaster areas sometimes get extensions. As of November 2026, the next ones are:
+
+- January 15, 2027: last 2026 quarterly estimated payment
+- February 1, 2027: 1099-NEC forms for 2026 (January 31 is a Sunday)
+- March 15, 2027: S-corp and partnership returns for 2026
+- April 15, 2027: individual and single-member LLC returns for 2026, and the first 2027 quarterly payment
+- October 15, 2027: extended individual returns
+
+Watch for January 2028: the 15th is a Saturday and the 17th is Martin Luther King Jr. Day, so look up where the last 2027 quarterly payment lands.
+
+For SBA loans, look up how recent the statements must be and cite it. SBA's 7(a) submission checklist asks for a current income statement and balance sheet dated the same day, within 120 days of submission, plus three years of year-end statements or tax returns. SBA's rulebook for these loans was updated on October 1, 2026 (SOP 50 10 8.1), so confirm the current requirement with the lender. If there's no outside deadline, set one 6 weeks out so the plan has a finish line.
 
 If the deadline is less than 2 weeks away, say so plainly and make "Ask your CPA about filing an extension" the first step on the Summary tab. An extension gives more time to file, not more time to pay.
 
@@ -72,7 +83,7 @@ If a provider shut down or vanished, the first task is getting their data out: s
 Before catching up any month, make sure the last finished month is actually right. Everything after it builds on it.
 
 - **Sole proprietor or single-member LLC:** total income and total expenses in the books for the last filed year should match the last Schedule C.
-- **S-corp or partnership:** the year-end balances in the books (cash, loans, what's owed) should match the balance sheet on the last filed return (Schedule L).
+- **S-corp or partnership:** the year-end balances in the books (cash, loans, what's owed) should match the balance sheet on the last filed return (Schedule L). Smaller businesses can skip Schedule L: an S-corp when total receipts and year-end assets were both under $250,000, and a partnership when receipts were under $250,000, assets under $1 million and a few other conditions are met. If their return has no Schedule L, match total income and expenses to the return instead, and match each account's year-end balance to its December statement.
 - **Every path:** the ending balance of each bank and card account at the last finished month should match that month's statement exactly.
 
 If anything doesn't match, make "Fix starting balances" the first row of the Plan and add the mismatch to the CPA questions tab. If there are no prior books, the starting point is the opening balance on the first statement in the backlog.
@@ -111,11 +122,11 @@ Within each month, in this order:
 
 1. **Sort** each transaction into a category.
 2. **Separate personal from business.** Personal spending from a business account goes to owner draws (money the owner took out), not expenses.
-3. **Check the revenue.** Payment processors deposit money with their fees already taken out, and refunds come back later. Record the full sale amount as income and the fee as an expense, so income in the books matches the processor's monthly report, not the bank deposit. Check that refunds and chargebacks are recorded, and that no transfer between their own accounts is counted as income.
+3. **Check the revenue.** Payment processors deposit money with their fees already taken out, and refunds come back later. Record the full sale amount as income and the fee as an expense, so income in the books matches the processor's monthly report, not the bank deposit. Check that refunds and chargebacks are recorded, and that no transfer between their own accounts is counted as income. Processors send a 1099-K only above the federal threshold (over $20,000 and over 200 transactions; some states set lower thresholds), so don't wait for a form: all of it is income whether or not one arrives.
 4. **Match to the bank.** The month's ending balance in the books must match the statement exactly, to the cent.
 5. **Lock the month** in the software (most programs call this a closing date), so nothing in it changes by accident. Only then mark it Locked.
 
-Also check contractors: look up the current threshold for sending a 1099 form (it rose to $2,000 for payments made in 2026) and list anyone paid over it. Add any missed 1099s to the CPA questions tab.
+Also check contractors: look up the current threshold for sending a 1099-NEC. It rose from $600 to $2,000 for payments made in 2026, and goes up with inflation each year starting in 2027. Payments made in 2025 or earlier still use $600, which matters for a backlog that reaches into 2025. List anyone paid over the threshold for each year, and add any missed 1099s to the CPA questions tab.
 
 ## 9. Do it yourself or hire help
 
@@ -123,7 +134,7 @@ Show both side by side on the Summary tab.
 
 **Do it yourself:** total estimated hours, divided by the hours per week they say they can give. If the finish date lands after the deadline, say so plainly and recommend help.
 
-**Hire help:** in 2025–2026, catch-up work commonly ran about $150–$600 per month of backlog for most small businesses, and up to about $1,200 per month for high volume or very messy books. Show a low, middle and high estimate, mark them as market ranges rather than quotes, and say real quotes depend on the books.
+**Hire help:** published 2026 ranges for catch-up work are about $150–$300 per month of backlog for simple books, $300–$600 for typical books, and $600–$1,200 or more for messy ones (several accounts, mixed personal and business money, missing statements, S-corps and partnerships). How messy the books are often matters more than how many months are behind. Pick the range that fits, show a low, middle and high estimate, mark them as market ranges rather than quotes, and say real quotes depend on the books. Look up current ranges if this skill's figures are more than a year old.
 
 Recommend help when any of these is true: the deadline is under 3 weeks away, the DIY finish date misses the deadline, they have more than 1,000 transactions a month, there are payroll or sales tax filings missing, or there's an IRS or state letter.
 

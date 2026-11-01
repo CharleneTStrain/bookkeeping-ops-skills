@@ -1,5 +1,17 @@
 # Versions
 
+## 1.1.0 — November 1, 2026
+
+Checked against current rules and prices.
+
+- **catch-up-plan** now lists the actual upcoming dates through October 2027, adds the 1099-NEC deadline (February 1, 2027 for 2026 forms), and flags the January 2028 quarterly payment that moves for a weekend and a holiday
+- The 1099-NEC check now uses $600 for payments made in 2025 or earlier and $2,000 for 2026, rising with inflation from 2027, so backlogs that reach into 2025 are checked against the right amount
+- The starting-balance check now handles smaller S-corps and partnerships that don't file a balance sheet (Schedule L) with their return
+- The revenue check notes the federal 1099-K threshold (over $20,000 and over 200 transactions) and that all processor income counts whether or not a form arrives
+- Hire-help ranges now follow published 2026 pricing by how messy the books are, not just by volume
+- SBA loan guidance now cites the 7(a) checklist's 120-day rule and the SBA rulebook update that took effect October 1, 2026
+- **bookkeeping-ops-context** records 1099 deadlines and this year's actual dates
+
 ## 1.0.0 — November 1, 2026
 
 First release.

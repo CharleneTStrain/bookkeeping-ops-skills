@@ -1,0 +1,27 @@
+name: Skill request
+description: Suggest a new bookkeeping ops skill or an improvement to one
+labels: ["skill request"]
+body:
+  - type: input
+    id: job
+    attributes:
+      label: The job
+      description: What bookkeeping job or recurring task should an agent handle?
+      placeholder: "e.g. Get my books ready for a bank loan application"
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: What you'd hand it
+      description: Bank statements, a tax return summary, a bookkeeper's notes — what goes in? Please don't include account numbers or personal details here.
+  - type: textarea
+    id: output
+    attributes:
+      label: What you'd want back
+      description: The finished thing, as specifically as you can describe it
+  - type: input
+    id: existing
+    attributes:
+      label: Closest existing skill
+      description: If one of the current skills almost does this, which one?

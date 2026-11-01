@@ -1,0 +1,18 @@
+{
+  "name": "bookkeeping-ops-skills",
+  "owner": {
+    "name": "Charlene Strain",
+    "url": "https://www.linkedin.com/in/charlene-strain"
+  },
+  "metadata": {
+    "description": "Bookkeeping skills for AI agents — getting small businesses and freelancers caught up on their books before a deadline, and keeping them caught up",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "bookkeeping-ops-skills",
+      "description": "Bookkeeping skills plus a shared context file: a catch-up plan that turns months of unfinished books into a dated, deadline-first plan with a do-it-yourself vs. hire estimate and CPA questions, delivered as an Excel workbook",
+      "source": "./"
+    }
+  ]
+}

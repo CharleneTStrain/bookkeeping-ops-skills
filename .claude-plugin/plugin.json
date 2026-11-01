@@ -1,0 +1,12 @@
+{
+  "name": "bookkeeping-ops-skills",
+  "description": "Bookkeeping skills for AI agents — getting small businesses and freelancers caught up on their books before a deadline, and keeping them caught up",
+  "version": "1.0.0",
+  "author": {
+    "name": "Charlene Strain"
+  },
+  "homepage": "https://charlenetstrain.github.io/bookkeeping-ops-skills/",
+  "repository": "https://github.com/CharleneTStrain/bookkeeping-ops-skills",
+  "license": "MIT",
+  "skills": "./skills"
+}

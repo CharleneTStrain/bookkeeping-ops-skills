@@ -1,5 +1,10 @@
 # Versions
 
+## 1.2.0 — November 1, 2026
+
+- **catch-up-plan** now sizes the backlog by timing the first month instead of a transactions-per-hour table, which had no published source behind it. Until month one is timed, it uses a 5–10 hour placeholder from a bookkeeping firm's published range, clearly marked
+- Months are locked only where the software allows it (QuickBooks closing date, Xero lock date). Where it can't, such as Wave, the month's report is saved as the record instead, and the status is now Done rather than Locked
+
 ## 1.1.0 — November 1, 2026
 
 Checked against current rules and prices.

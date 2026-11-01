@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Catch-up plan
@@ -100,16 +100,14 @@ Do these once, before any month gets sorted:
 
 Months behind = months from the last finished month to the most recent full month.
 
-Estimate do-it-yourself hours per month of backlog, across all accounts:
+Size it by timing it, not by a rule of thumb. How long a month takes depends on the number of accounts, how messy the books are and how familiar the person is with their software, so a table can be off by double either way.
 
-| Transactions a month | Hours per month of backlog |
-|---|---|
-| Under 100 | 2–3 |
-| 100–300 | 4–6 |
-| 300–1,000 | 8–15 |
-| Over 1,000 | 20+ (recommend help) |
+1. **Make the first month in the plan a timed month.** Ask them to note how long it takes, start to finish.
+2. **Until then, use a placeholder:** 5–10 hours per month of backlog, one bookkeeping firm's published range for a small business's monthly bookkeeping. Mark it "placeholder — replace after month one" in the workbook.
+3. **After month one, replace the placeholder** with their real time and let the plan recalculate. Later months usually go a little faster once categories and rules are set up, so don't add extra time for that.
+4. **Flag what will make it slower:** personal and business money mixed in the same account, missing receipts, and more than one account per month. Name these on the Summary tab so the timed month is read in context.
 
-Add 75% if personal and business money are mixed in the same account, and another 25% if receipts are missing. These are starting estimates, not measured figures: put them in editable cells, mark them as estimates, and tell the person to adjust after finishing the first month.
+If they have more than 1,000 transactions a month, recommend help before timing anything.
 
 ## 8. Order the work
 
@@ -124,7 +122,7 @@ Within each month, in this order:
 2. **Separate personal from business.** Personal spending from a business account goes to owner draws (money the owner took out), not expenses.
 3. **Check the revenue.** Payment processors deposit money with their fees already taken out, and refunds come back later. Record the full sale amount as income and the fee as an expense, so income in the books matches the processor's monthly report, not the bank deposit. Check that refunds and chargebacks are recorded, and that no transfer between their own accounts is counted as income. Processors send a 1099-K only above the federal threshold (over $20,000 and over 200 transactions; some states set lower thresholds), so don't wait for a form: all of it is income whether or not one arrives.
 4. **Match to the bank.** The month's ending balance in the books must match the statement exactly, to the cent.
-5. **Lock the month** in the software (most programs call this a closing date), so nothing in it changes by accident. Only then mark it Locked.
+5. **Lock the month if the software allows it**, so nothing in it changes by accident. QuickBooks calls this a closing date and Xero calls it a lock date. Some programs can't lock past months (Wave, for one). Then save a PDF of the month's profit and loss report next to that month's statement as the record of what was finished, and tell them not to edit that month without noting why. Either way, mark the month Done.
 
 Also check contractors: look up the current threshold for sending a 1099-NEC. It rose from $600 to $2,000 for payments made in 2026, and goes up with inflation each year starting in 2027. Payments made in 2025 or earlier still use $600, which matters for a backlog that reaches into 2025. List anyone paid over the threshold for each year, and add any missed 1099s to the CPA questions tab.
 
@@ -132,7 +130,7 @@ Also check contractors: look up the current threshold for sending a 1099-NEC. It
 
 Show both side by side on the Summary tab.
 
-**Do it yourself:** total estimated hours, divided by the hours per week they say they can give. If the finish date lands after the deadline, say so plainly and recommend help.
+**Do it yourself:** the placeholder (or timed) hours per month times months behind, divided by the hours per week they say they can give. If the finish date lands after the deadline, say so plainly and recommend help.
 
 **Hire help:** published 2026 ranges for catch-up work are about $150–$300 per month of backlog for simple books, $300–$600 for typical books, and $600–$1,200 or more for messy ones (several accounts, mixed personal and business money, missing statements, S-corps and partnerships). How messy the books are often matters more than how many months are behind. Pick the range that fits, show a low, middle and high estimate, mark them as market ranges rather than quotes, and say real quotes depend on the books. Look up current ranges if this skill's figures are more than a year old.
 
@@ -168,7 +166,7 @@ Name it `catch-up-plan-[business-name]-[YYYY-MM-DD].xlsx`. Load the xlsx skill b
 
 1. **Summary** — one page, readable at a glance: deadline, months behind, estimated hours, DIY vs. hire cost, finish date, and the single next step.
 2. **Accounts** — every bank account, card, payment processor and loan that touches the business, with the last finished month and whether statements are downloaded. No account numbers.
-3. **Backlog** — one row per account per month, with status (Not started / Statements in / Sorted / Matched to bank / Locked) and estimated hours.
+3. **Backlog** — one row per account per month, with status (Not started / Statements in / Sorted / Matched to bank / Done), whether it's locked in the software, and hours per month (placeholder until month one is timed).
 4. **Plan** — a week-by-week schedule in the order from step 8, ending at least 7 days before the deadline.
 5. **CPA questions** — everything from step 10 that applies, with the month or account it came from.
 6. **Stay caught up** — the routine from step 12.
@@ -176,8 +174,8 @@ Name it `catch-up-plan-[business-name]-[YYYY-MM-DD].xlsx`. Load the xlsx skill b
 Workbook rules:
 
 - Every total and date is a formula reading from the Accounts and Backlog tabs, so changing an estimate or a status updates the plan.
-- Estimated hours and costs are visibly marked as estimates.
-- A progress bar on Summary: months Locked out of months behind.
+- Placeholder hours and cost ranges are visibly marked; the timed first month replaces the placeholder in one cell.
+- A progress bar on Summary: months Done out of months behind.
 - The finish date turns red when it lands after the deadline.
 - Readable on a phone: large text on Summary and the key numbers on the first screen. Mention it opens in Google Sheets too.
 
@@ -190,7 +188,7 @@ Recalculate and open the finished file to check that formulas work, the dates ar
 The last tab is how this doesn't happen again:
 
 - **Every week, 20 minutes:** sort new transactions and snap photos of receipts.
-- **Every month, within 10 days of month end:** match each account to its statement, check revenue against the processor's report, and lock the month.
+- **Every month, within 10 days of month end:** match each account to its statement, check revenue against the processor's report, and lock the month (or save its report, if the software can't lock).
 - **Every quarter:** set aside money for taxes, pay quarterly estimates, and export a copy of the books.
 - **Always:** keep business money in its own bank account and card.
 

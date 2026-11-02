@@ -1,5 +1,10 @@
 # Versions
 
+## 1.2.1 — November 1, 2026
+
+- **catch-up-plan** now says the 120-day rule comes from SBA's standard 7(a) checklist and that smaller SBA loans can follow the lender's own checklist, so the lender's list comes first
+- The starting-point check now explains why it matters for loans: lenders compare books against tax returns, and SBA 7(a) loans over $500,000 must be checked against IRS tax transcripts before closing
+
 ## 1.2.0 — November 1, 2026
 
 - **catch-up-plan** now sizes the backlog by timing the first month instead of a transactions-per-hour table, which had no published source behind it. Until month one is timed, it uses a 5–10 hour placeholder from a bookkeeping firm's published range, clearly marked

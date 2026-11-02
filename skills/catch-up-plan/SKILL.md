@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.2.0
+  version: 1.2.1
 ---
 
 # Catch-up plan
@@ -61,7 +61,7 @@ Look up this year's actual dates on IRS.gov before using them: dates move to the
 
 Watch for January 2028: the 15th is a Saturday and the 17th is Martin Luther King Jr. Day, so look up where the last 2027 quarterly payment lands.
 
-For SBA loans, look up how recent the statements must be and cite it. SBA's 7(a) submission checklist asks for a current income statement and balance sheet dated the same day, within 120 days of submission, plus three years of year-end statements or tax returns. SBA's rulebook for these loans was updated on October 1, 2026 (SOP 50 10 8.1), so confirm the current requirement with the lender. If there's no outside deadline, set one 6 weeks out so the plan has a finish line.
+For SBA loans, look up how recent the statements must be and cite it. SBA's standard 7(a) submission checklist asks for a current income statement and balance sheet dated the same day, within 120 days of submission, plus three years of year-end statements or tax returns. SBA's rulebook for these loans was updated on October 1, 2026 (SOP 50 10 8.1), so confirm the current requirement with the lender. Smaller SBA loans can follow the lender's own checklist instead, which is one more reason to ask the lender for their list first. If there's no outside deadline, set one 6 weeks out so the plan has a finish line.
 
 If the deadline is less than 2 weeks away, say so plainly and make "Ask your CPA about filing an extension" the first step on the Summary tab. An extension gives more time to file, not more time to pay.
 
@@ -85,6 +85,8 @@ Before catching up any month, make sure the last finished month is actually righ
 - **Sole proprietor or single-member LLC:** total income and total expenses in the books for the last filed year should match the last Schedule C.
 - **S-corp or partnership:** the year-end balances in the books (cash, loans, what's owed) should match the balance sheet on the last filed return (Schedule L). Smaller businesses can skip Schedule L: an S-corp when total receipts and year-end assets were both under $250,000, and a partnership when receipts were under $250,000, assets under $1 million and a few other conditions are met. If their return has no Schedule L, match total income and expenses to the return instead, and match each account's year-end balance to its December statement.
 - **Every path:** the ending balance of each bank and card account at the last finished month should match that month's statement exactly.
+
+For a loan, this check matters twice: lenders compare the books against the tax returns, and for SBA 7(a) loans over $500,000 they must check the numbers against IRS tax transcripts and resolve any real gap before closing.
 
 If anything doesn't match, make "Fix starting balances" the first row of the Plan and add the mismatch to the CPA questions tab. If there are no prior books, the starting point is the opening balance on the first statement in the backlog.
 

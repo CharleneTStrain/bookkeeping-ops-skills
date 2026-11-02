@@ -44,5 +44,5 @@ Skills are content only; there's no build. Run `./validate-skills.sh` after any 
 
 - Bump the skill's `metadata.version`.
 - If you add, remove, or rename a skill, update the README tables, the "how skills work together" diagram, and `VERSIONS.md`, and bump the version in both files under `.claude-plugin/`.
-- If you add, remove, or rename a skill, also update the skill data inside `site/index.html`. The diagram there shows one column today; when a second category is added, set `.cols` back to two columns and restore the two-branch wire path.
-- Keep the library's rules (see CONTRIBUTING.md): deadline first, the business's own books, planning not tax advice, no judgment, plain words.
+- If you add, remove, or rename a skill, also update the skill data inside `site/index.html`. The diagram there has two columns, one per category after Start here; with a third category, widen `.cols` to three and add a branch to the wire path.
+- Keep the library's rules (see CONTRIBUTING.md): deadline first, the business's own books, planning not tax advice (no estimates of this year's tax or penalties), no judgment, plain words.

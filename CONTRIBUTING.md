@@ -36,7 +36,7 @@ These run through the whole library. A skill that breaks one won't be merged.
 - **Deadline first.** Work backwards from the date someone else set: a tax date, a letter, a lender, an accountant.
 - **Their books, not averages.** Build every plan from the business's own accounts and volume. If a number is missing, ask or mark it as an estimate; never fill it with a "typical" one.
 - **Current rules, looked up and cited.** Tax dates, 1099 thresholds, sales tax rules and lender requirements change. Look them up and say where they came from; never state them from memory.
-- **Planning, not tax advice.** Never estimate what someone owes or what a penalty will be. Send those questions to a CPA. No specific bookkeeper, firm or software picks.
+- **Planning, not tax advice.** Never estimate this year's total tax, the April bill, or a penalty amount. Quarterly payments may use the IRS's own penalty-safe rule based on last year's return. Send everything else to a CPA. No specific bookkeeper, firm or software picks.
 - **No judgment.** Describe where the books are and the next step. Never imply someone fell behind on purpose.
 - **Nothing sensitive stored.** No account numbers, tax ID numbers, Social Security numbers, or passwords in any file a skill writes.
 - **Plain words.** Say "match to the bank" before "reconcile." Define terms like "accrual" the first time they appear.

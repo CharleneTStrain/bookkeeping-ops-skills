@@ -1,5 +1,12 @@
 # Versions
 
+## 1.3.0 — November 2, 2026
+
+- New skill, **quarterly-tax-set-aside**: a quick path to the next due date and safe payment (from last year's return, using the IRS's own penalty rule), a set-aside rate on profit built from self-employment tax, the person's top federal bracket and their state's rate, spouse withholding as an option, uneven-income and income-drop flags, what to do if you already owe, loan notes, and how to record tax payments, delivered as an Excel workbook
+- **bookkeeping-ops-context** adds a Taxes section
+- **catch-up-plan** hands freelancers off to the new skill once income and costs are sorted
+- The library's planning-not-advice rule now says exactly what's off limits: estimates of this year's tax, the April bill, or penalties
+
 ## 1.2.2 — November 2, 2026
 
 - **catch-up-plan** now works through the months a deadline needs from oldest to newest, since each month's ending balance starts the next, and for a loan ends by pulling the profit and loss and balance sheet for the same date

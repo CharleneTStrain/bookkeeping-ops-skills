@@ -2,7 +2,7 @@
 name: bookkeeping-ops-context
 description: Create or update the business bookkeeping context file every other skill in this library reads first — what the business is and how it's set up, its accounts and payment processors, bookkeeping software, who does the books and taxes, transaction volume, payroll and contractors, sales tax, and upcoming deadlines. Use at the start before using other bookkeeping ops skills, when someone says "set up my bookkeeping context," "here's my business," "remember my accounts," "my bookkeeper quit," or "update my deadlines," or whenever a skill keeps asking for the same background. It creates `.agents/bookkeeping-ops-context.md`.
 metadata:
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 # Bookkeeping ops context
@@ -72,6 +72,14 @@ Cover: bookkeeper, CPA or tax preparer, payroll provider. Note any provider that
 - Contractors paid during the year, roughly how many:
 - States where they collect or may owe sales tax:
 
+## Taxes
+- Last year's federal total tax, adjusted gross income, taxable income and filing status (from the return):
+- Self-employed last year too? [yes / no]
+- Withholding this year from any job, theirs or a joint-filing spouse's:
+- State income tax, and the state's rate:
+- Taxes savings account, and the set-aside rate in use:
+- Payment plan with the IRS or state, if any, and its terms:
+
 ## Deadlines
 | Deadline | Date | Set by | Notes |
 |---|---|---|---|
@@ -100,6 +108,7 @@ When another skill learns something durable mid-task — a month finished, a new
 
 ## Related skills
 
-Every skill in this library reads this file first. The one that leans on it most today:
+Every skill in this library reads this file first. The ones that lean on it most:
 
 - **catch-up-plan** — uses Accounts, Books and software, People who help and Deadlines to size the backlog and build a dated plan, and takes back each month as it's finished
+- **quarterly-tax-set-aside** — uses Taxes and Deadlines to work out each quarter's safe payment and the set-aside rate, and takes back last year's figures and any payment plan

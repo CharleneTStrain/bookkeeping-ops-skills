@@ -91,7 +91,7 @@ h2 em{font-style:normal;color:var(--rust)}
 .ctx small{font:400 12px/1.4 var(--mono);opacity:.8}
 .wires{height:44px;position:relative}
 .wires svg{position:absolute;inset:0;width:100%;height:100%}
-.cols{display:grid;grid-template-columns:minmax(0,320px);justify-content:center;gap:10px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,320px));justify-content:center;gap:10px}
 @media (max-width:640px){.cols{grid-template-columns:minmax(0,1fr)}.wires{height:24px;width:0;margin:0 auto;border-left:1.5px solid var(--ink)}.wires svg{display:none}}
 .col{border:1px solid var(--ink);background:var(--paper)}
 .col h3{margin:0;padding:10px;font:600 11px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.12em;background:var(--agent);border-bottom:1px solid var(--ink);min-height:52px}
@@ -192,14 +192,14 @@ footer{padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
 
 <main id="top">
 <section class="hero"><div class="wrap">
-  <div class="sheet"><span class="label">Sheet 01 · Overview</span><span class="label">v1.2.2 · MIT · Nov 2026</span></div>
+  <div class="sheet"><span class="label">Sheet 01 · Overview</span><span class="label">v1.3.0 · MIT · Nov 2026</span></div>
   <h1>Bookkeeping ops skills<span>for AI agents</span></h1>
-  <p class="sub">Open-source skills for getting a small business's books caught up before a deadline someone else set — a tax date, an IRS letter, a lender, an accountant — and keeping them caught up. Built for small business owners, freelancers and solo operators. For Claude Code, the Claude app, Codex, Cursor, and any agent that reads skills.</p>
+  <p class="sub">Open-source skills for getting a small business's books caught up before a deadline someone else set — a tax date, an IRS letter, a lender, an accountant — keeping them caught up, and paying quarterly taxes on time. Built for small business owners, freelancers and solo operators. For Claude Code, the Claude app, Codex, Cursor, and any agent that reads skills.</p>
   <div class="term" role="group" aria-label="Install command">
     <div class="top"><span>bookkeeping-ops-skills — zsh</span><button class="copy" data-copy="npx skills add CharleneTStrain/bookkeeping-ops-skills">Copy</button></div>
     <div class="body">
       <div class="line">$ npx skills add CharleneTStrain/bookkeeping-ops-skills</div>
-      <div class="line"><span class="ok">✓</span> resolved 2 skills · claude code, codex, cursor</div>
+      <div class="line"><span class="ok">✓</span> resolved 3 skills · claude code, codex, cursor</div>
       <div class="line"><span class="ok">✓</span> bookkeeping-ops-context installed first · read by every other skill</div>
     </div>
   </div>
@@ -224,7 +224,7 @@ footer{padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
     <div class="dg">
       <div class="ctx"><b>bookkeeping-ops-context</b><small>.agents/bookkeeping-ops-context.md · read first by every skill</small></div>
       <div class="wires"><svg viewBox="0 0 860 44" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M430 0 V44" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></div>
+        <path d="M430 0 V18 M260 18 H600 M260 18 V44 M600 18 V44" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></div>
       <div class="cols" id="cols"></div>
     </div>
   </div>
@@ -238,7 +238,7 @@ footer{padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
   <div class="rules" style="margin-top:28px">
     <div class="rule"><span class="label">Rule 1</span><h3>Deadline first.</h3><p>Every plan works backwards from the date someone else set, and finishes a week before it.</p></div>
     <div class="rule"><span class="label">Rule 2</span><h3>Your books, not averages.</h3><p>Plans are built from your own accounts and volume. Estimates are marked as estimates.</p></div>
-    <div class="rule"><span class="label">Rule 3</span><h3>Planning, not tax advice.</h3><p>No guesses at what you owe. Those questions go to your CPA.</p></div>
+    <div class="rule"><span class="label">Rule 3</span><h3>Planning, not tax advice.</h3><p>No guesses at this year's tax bill or penalties. Those go to your CPA.</p></div>
     <div class="rule"><span class="label">Rule 4</span><h3>No judgment.</h3><p>Skills say where your books are and the next step. Never that you fell behind on purpose.</p></div>
   </div>
 </div></section>
@@ -249,7 +249,7 @@ footer{padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
   <div class="tools" style="margin-top:24px">
     <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap" role="group" aria-label="Filter by category"></div>
     <label class="label" for="q" style="position:absolute;left:-9999px">Search skills</label>
-    <input class="search" id="q" type="search" placeholder="Search: catch up, CPA…">
+    <input class="search" id="q" type="search" placeholder="Search: catch up, quarterly…">
   </div>
   <div class="grid" id="grid"></div>
 </div></section>
@@ -279,13 +279,13 @@ footer{padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
 <aside class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle"></aside>
 
 <script>
-const DATA = {"cats": [{"name": "Start here", "blurb": "", "ids": ["bookkeeping-ops-context"]}, {"name": "Getting caught up", "blurb": "When months of books are unfinished and a deadline is coming.", "ids": ["catch-up-plan"]}], "skills": {"bookkeeping-ops-context": {"id": "bookkeeping-ops-context", "title": "Bookkeeping ops context", "short": "Writes down your business setup, accounts, software, helpers and deadlines once, so every other skill can read it", "cat": "Start here", "what": "Create or update the business bookkeeping context file every other skill in this library reads first — how the business is set up, its accounts and payment processors, software, who does the books and taxes, payroll, contractors, sales tax, and deadlines.", "when": "Use at the start before using other bookkeeping ops skills, when someone says \"set up my bookkeeping context,\" \"here's my business,\" \"my bookkeeper quit,\" or \"update my deadlines.\"", "problem": "Every bookkeeping question starts with the same background — how the business is set up, which accounts money moves through, what software the books are in, who helps, and what's due when. Answering it every time is tiring, and the answers drift.", "does": "Writes your business's bookkeeping picture down once: setup, accounts and payment processors, software, who does the books and taxes, payroll, contractors, sales tax and deadlines. Every other skill reads it first. It never stores account numbers, tax ID numbers, or passwords.", "input": "last year's tax return summary, a list of your accounts, a bookkeeper's handoff notes, or just a conversation. \"Not sure\" is a fine answer.", "get": "a one-page file at .agents/bookkeeping-ops-context.md you can update whenever something changes, and hand to a new bookkeeper on day one.", "related": [["catch-up-plan", "uses your accounts, software, helpers and deadlines to build a dated plan"]]}, "catch-up-plan": {"id": "catch-up-plan", "title": "Catch-up plan", "short": "Turns months of unfinished books into a deadline-first plan, with a do-it-yourself vs. hire estimate and questions for your CPA", "cat": "Getting caught up", "what": "Turn months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline.", "when": "Use when someone says \"I'm behind on my books,\" \"my accountant needs my numbers,\" \"my bookkeeper quit,\" \"I got a letter from the IRS,\" or \"I need my books done for a loan.\"", "problem": "You're months behind on your books and someone else just set the deadline — a tax date, an IRS letter, a lender, your accountant. The pile is too big to start, and a bookkeeper's quote feels like a guess.", "does": "Starts with two questions and one 10-minute task, then works backwards from your deadline. Checks your last finished month against your last tax return, sets up categories before sorting, sizes the backlog in hours, orders the months by what the deadline needs, and checks revenue from Stripe, Square or PayPal. Shows doing it yourself vs. hiring help side by side, and sends anything about what you'll owe to your CPA.", "input": "your deadline, the last month you're confident is finished, and a list of the accounts money moves through. Rough transaction counts are fine.", "get": "one next step for today, plus an Excel workbook with a one-page summary, your accounts, a month-by-month backlog, a week-by-week plan that finishes before your deadline, CPA questions, and a routine to stay caught up.", "related": [["bookkeeping-ops-context", "reads your setup and deadlines first, and takes back each finished month"]]}}};
+const DATA = {"cats": [{"name": "Start here", "blurb": "", "ids": ["bookkeeping-ops-context"]}, {"name": "Getting caught up", "blurb": "When months of books are unfinished and a deadline is coming.", "ids": ["catch-up-plan"]}, {"name": "Quarterly taxes", "blurb": "When no one takes taxes out of your pay.", "ids": ["quarterly-tax-set-aside"]}], "skills": {"bookkeeping-ops-context": {"id": "bookkeeping-ops-context", "title": "Bookkeeping ops context", "short": "Writes down your business setup, accounts, software, helpers and deadlines once, so every other skill can read it", "cat": "Start here", "what": "Create or update the business bookkeeping context file every other skill in this library reads first — how the business is set up, its accounts and payment processors, software, who does the books and taxes, payroll, contractors, sales tax, and deadlines.", "when": "Use at the start before using other bookkeeping ops skills, when someone says \"set up my bookkeeping context,\" \"here's my business,\" \"my bookkeeper quit,\" or \"update my deadlines.\"", "problem": "Every bookkeeping question starts with the same background — how the business is set up, which accounts money moves through, what software the books are in, who helps, and what's due when. Answering it every time is tiring, and the answers drift.", "does": "Writes your business's bookkeeping picture down once: setup, accounts and payment processors, software, who does the books and taxes, payroll, contractors, sales tax and deadlines. Every other skill reads it first. It never stores account numbers, tax ID numbers, or passwords.", "input": "last year's tax return summary, a list of your accounts, a bookkeeper's handoff notes, or just a conversation. \"Not sure\" is a fine answer.", "get": "a one-page file at .agents/bookkeeping-ops-context.md you can update whenever something changes, and hand to a new bookkeeper on day one.", "related": [["catch-up-plan", "uses your accounts, software, helpers and deadlines to build a dated plan"], ["quarterly-tax-set-aside", "uses your tax details to work out each quarter's safe payment"]]}, "catch-up-plan": {"id": "catch-up-plan", "title": "Catch-up plan", "short": "Turns months of unfinished books into a deadline-first plan, with a do-it-yourself vs. hire estimate and questions for your CPA", "cat": "Getting caught up", "what": "Turn months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline.", "when": "Use when someone says \"I'm behind on my books,\" \"my accountant needs my numbers,\" \"my bookkeeper quit,\" \"I got a letter from the IRS,\" or \"I need my books done for a loan.\"", "problem": "You're months behind on your books and someone else just set the deadline — a tax date, an IRS letter, a lender, your accountant. The pile is too big to start, and a bookkeeper's quote feels like a guess.", "does": "Starts with two questions and one 10-minute task, then works backwards from your deadline. Checks your last finished month against your last tax return, sets up categories before sorting, sizes the backlog in hours, orders the months by what the deadline needs, and checks revenue from Stripe, Square or PayPal. Shows doing it yourself vs. hiring help side by side, and sends anything about what you'll owe to your CPA.", "input": "your deadline, the last month you're confident is finished, and a list of the accounts money moves through. Rough transaction counts are fine.", "get": "one next step for today, plus an Excel workbook with a one-page summary, your accounts, a month-by-month backlog, a week-by-week plan that finishes before your deadline, CPA questions, and a routine to stay caught up.", "related": [["bookkeeping-ops-context", "reads your setup and deadlines first, and takes back each finished month"], ["quarterly-tax-set-aside", "works out what to pay each quarter once income is sorted"]]}, "quarterly-tax-set-aside": {"id": "quarterly-tax-set-aside", "title": "Quarterly tax set-aside", "short": "Works out each quarter's safe payment from last year's return, a set-aside rate on your profit, and what to do if you already owe", "cat": "Quarterly taxes", "what": "Work out what a freelancer or self-employed person should pay the IRS each quarter to stay clear of the underpayment penalty, what to set aside from what they earn, and what to do if they already owe.", "when": "Use when someone says \"how much should I set aside for taxes,\" \"do I need to pay quarterly taxes,\" \"I missed my quarterly payments,\" \"I owe the IRS and can't pay it all,\" or \"what do I pay on January 15.\"", "problem": "Nobody takes taxes out of a freelancer's pay, the quarterly due dates don't match the calendar, and the first tax return often brings a bill nobody saw coming.", "does": "Starts with one number: your next due date and the safe payment for it, from last year's return using the IRS's own penalty rule, so you can schedule it today. Then builds a set-aside rate on your profit: self-employment tax, your federal bracket and your state's rate. Covers spouse withholding, seasonal businesses, businesses that buy inventory, and what to do if you already owe. Never estimates this year's bill or a penalty.", "input": "last year's tax return and roughly what you've earned so far this year.", "get": "the next due date and what to pay, federal and state, plus an Excel workbook with safe payments, a set-aside log, a payment tracker, options if you owe, and CPA questions.", "related": [["bookkeeping-ops-context", "reads your tax details and deadlines first"], ["catch-up-plan", "sorts income and costs first when the books are behind"]]}}};
 const REPO = "CharleneTStrain/bookkeeping-ops-skills";
 const GH = "https://github.com/" + REPO + "/tree/main/skills/";
 const $ = s => document.querySelector(s);
 const cap = s => s ? s[0].toUpperCase() + s.slice(1) : s;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const short = {"Start here":"Start here","Getting caught up":"Catching up"};
+const short = {"Start here":"Start here","Getting caught up":"Catching up","Quarterly taxes":"Quarterly taxes"};
 
 function copyText(btn, text){
   const done = () => { const o = btn.textContent; btn.textContent = "Copied"; setTimeout(() => btn.textContent = o, 1400); };
@@ -298,7 +298,8 @@ document.addEventListener("click", e => { const b = e.target.closest("[data-copy
 $("#cols").innerHTML = DATA.cats.slice(1).map(c => `<div class="col"><h3>${esc(c.name)}</h3><ul>${c.ids.map(id => `<li><button data-open="${id}">${id}</button></li>`).join("")}</ul></div>`).join("");
 
 const chains = [
-  ["Get caught up before the deadline", ["bookkeeping-ops-context","catch-up-plan"], "Write down your business once, then get a dated plan that finishes before the deadline."]
+  ["Get caught up before the deadline", ["bookkeeping-ops-context","catch-up-plan"], "Write down your business once, then get a dated plan that finishes before the deadline."],
+  ["Pay quarterly taxes on time", ["catch-up-plan","quarterly-tax-set-aside"], "Sort the year's income and costs, then work out each quarter's safe payment and what to set aside."]
 ];
 $("#chains").innerHTML = chains.map(([t, ids, p]) => `<div class="chain"><span class="label">${esc(t)}</span><div class="flow">${ids.map((id,i) => `${i?'<span class="arr">→</span>':''}<button class="node" data-open="${id}">${id}</button>`).join("")}</div><p>${esc(p)}</p></div>`).join("");
 
@@ -382,7 +383,7 @@ const asks = [
   ["Set up my bookkeeping context from last year's tax return", ["bookkeeping-ops-context"]],
   ["I'm eight months behind and taxes are due April 15", ["catch-up-plan"]],
   ["My bookkeeper quit and I don't know what she finished", ["bookkeeping-ops-context","catch-up-plan"]],
-  ["My accountant needs my numbers in three weeks. Can I do this myself?", ["catch-up-plan"]]
+  ["I just went freelance. How much should I set aside for taxes?", ["quarterly-tax-set-aside"]]
 ];
 $("#use").innerHTML = asks.map(([a, ids]) => `<div class="ask"><span class="label">You say</span><q>${esc(a)}</q><span class="to">→ ${ids.map(id => `<a href="#${id}" data-open="${id}">${id}</a>`).join(", then ")}</span></div>`).join("");
 </script>

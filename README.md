@@ -1,6 +1,6 @@
 # Bookkeeping Ops Skills for AI Agents
 
-Open-source skills for getting a small business's books caught up before a deadline someone else set — a tax date, an IRS letter, a lender, an accountant — and keeping them caught up. Built for small business owners, freelancers and solo operators in the US. Works with Claude Code, the Claude app, OpenAI Codex, Cursor, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+Open-source skills for getting a small business's books caught up before a deadline someone else set — a tax date, an IRS letter, a lender, an accountant — keeping them caught up, and paying quarterly taxes on time. Built for small business owners, freelancers and solo operators in the US. Works with Claude Code, the Claude app, OpenAI Codex, Cursor, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
 **Browse every skill at [charlenetstrain.github.io/bookkeeping-ops-skills](https://charlenetstrain.github.io/bookkeeping-ops-skills/).**
 
@@ -34,17 +34,19 @@ Everything starts with **bookkeeping-ops-context**. Run it once and it writes `.
           │    (read by every other skill first) │
           └───────────────────┬──────────────────┘
                               │
-                              ▼
-              ┌───────────────────────────────┐
-              │       Getting caught up       │
-              ├───────────────────────────────┤
-              │         catch-up-plan         │
-              └───────────────────────────────┘
+             ┌────────────────┴────────────────┐
+             ▼                                 ▼
+┌───────────────────────────┐     ┌───────────────────────────┐
+│     Getting caught up     │     │       Quarterly taxes     │
+├───────────────────────────┤     ├───────────────────────────┤
+│       catch-up-plan       │     │  quarterly-tax-set-aside  │
+└───────────────────────────┘     └───────────────────────────┘
 ```
 
-The chain that comes up most:
+The chains that come up most:
 
 - **Bookkeeping ops context → Catch-up plan:** write down the business once, then get a dated plan that finishes before the deadline
+- **Catch-up plan → Quarterly tax set-aside:** sort the year's income and costs, then work out what to pay each quarter and what to set aside
 
 Each skill ends with a **Related skills** section naming what it hands off to and why.
 
@@ -52,7 +54,7 @@ Each skill ends with a **Related skills** section naming what it hands off to an
 
 - **Deadline first.** Every plan works backwards from the date someone else set.
 - **Their books, not averages.** Plans are built from the business's own accounts and volume. Estimates are marked as estimates.
-- **Planning, not tax advice.** No guesses at what anyone owes. Those questions go to a CPA.
+- **Planning, not tax advice.** No guesses at this year's tax bill or any penalty. Quarterly payments use the IRS's own rule based on last year's return; everything else goes to a CPA.
 - **No judgment.** Skills describe where the books are and the next step, never that someone fell behind on purpose.
 
 ## All skills
@@ -71,7 +73,15 @@ When months of books are unfinished and a deadline is coming.
 |---|---|---|
 | [Catch-up plan](skills/catch-up-plan/) | Turns months of unfinished books into a deadline-first plan, with a do-it-yourself vs. hire estimate and questions for your CPA | Excel workbook: summary, accounts, backlog, week-by-week plan, CPA questions, stay-caught-up routine |
 
-More skills coming: a quarterly tax set-aside skill for freelancers, and a loan-ready books skill for owners who need lender-ready statements.
+### Quarterly taxes
+
+When no one takes taxes out of your pay.
+
+| Skill | What it does | Output |
+|---|---|---|
+| [Quarterly tax set-aside](skills/quarterly-tax-set-aside/) | Works out each quarter's safe payment from last year's return, a set-aside rate on your profit, and what to do if you already owe | Excel workbook: safe payments, set-aside rate and log, payment tracker, options if you owe, CPA questions |
+
+More skills coming: a loan-ready books skill for owners who need lender-ready statements.
 
 ## Install
 
@@ -84,7 +94,7 @@ Use [`npx skills`](https://github.com/vercel-labs/skills) to install into whiche
 npx skills add CharleneTStrain/bookkeeping-ops-skills
 
 # Install specific skills
-npx skills add CharleneTStrain/bookkeeping-ops-skills --skill bookkeeping-ops-context catch-up-plan
+npx skills add CharleneTStrain/bookkeeping-ops-skills --skill bookkeeping-ops-context quarterly-tax-set-aside
 
 # See what's available
 npx skills add CharleneTStrain/bookkeeping-ops-skills --list
@@ -143,6 +153,12 @@ Once installed, ask in plain words:
 
 "My accountant needs my numbers in three weeks. Can I do this myself?"
 → catch-up-plan
+
+"I just went freelance. How much should I set aside for taxes?"
+→ quarterly-tax-set-aside
+
+"I missed my quarterly payments and owe the IRS. What now?"
+→ quarterly-tax-set-aside
 ```
 
 Or call one directly:
@@ -150,6 +166,7 @@ Or call one directly:
 ```
 /bookkeeping-ops-context
 /catch-up-plan
+/quarterly-tax-set-aside
 ```
 
 ## Contributing

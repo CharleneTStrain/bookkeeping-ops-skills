@@ -5,13 +5,13 @@
     "url": "https://www.linkedin.com/in/charlene-strain"
   },
   "metadata": {
-    "description": "Bookkeeping skills for AI agents — getting small businesses and freelancers caught up on their books before a deadline, and keeping them caught up",
-    "version": "1.2.2"
+    "description": "Bookkeeping skills for AI agents — getting small businesses and freelancers caught up on their books before a deadline, keeping them caught up, and paying quarterly taxes on time",
+    "version": "1.3.0"
   },
   "plugins": [
     {
       "name": "bookkeeping-ops-skills",
-      "description": "Bookkeeping skills plus a shared context file: a catch-up plan that turns months of unfinished books into a dated, deadline-first plan with a do-it-yourself vs. hire estimate and CPA questions, delivered as an Excel workbook",
+      "description": "Bookkeeping skills plus a shared context file: a catch-up plan that turns months of unfinished books into a dated, deadline-first plan with a do-it-yourself vs. hire estimate and CPA questions, delivered as an Excel workbook, plus a quarterly tax set-aside that works out each quarter's safe payment from last year's return, a set-aside rate on profit, and what to do if you already owe",
       "source": "./"
     }
   ]

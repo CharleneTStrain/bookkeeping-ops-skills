@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.2.2
+  version: 1.3.0
 ---
 
 # Catch-up plan
@@ -34,7 +34,7 @@ Don't ask anything else until they've done this or said they can't. Getting one 
 
 After the two questions, place them in one of three paths. Ask one question if it isn't clear: "Is this for a business with its own bank account, or mostly you working on your own?"
 
-- **Freelancer or solo with one account and no bookkeeping software.** Use the light path: one account, a simple spreadsheet instead of six tabs, and no categories beyond the ones on the Schedule C tax form. If their real question is "how much do I owe or set aside?", sort the income and expenses first, then send the tax question to their CPA.
+- **Freelancer or solo with one account and no bookkeeping software.** Use the light path: one account, a simple spreadsheet instead of six tabs, and no categories beyond the ones on the Schedule C tax form. If their real question is "how much do I owe or set aside?", sort the income and expenses first, then hand off to **quarterly-tax-set-aside**.
 - **Small business (the standard path).** Everything below.
 - **Seeking a loan, or more than 1,000 transactions a month.** Use the standard path to get current. Lenders usually also want statements prepared on an accrual basis (income and costs counted when earned or owed, not when cash moves), a list of who owes the business money and whom it owes, and a list of existing loans. Put "Ask your CPA whether your books need to be on an accrual basis for the lender" on the CPA questions tab.
 
@@ -220,5 +220,6 @@ If they gave details the context file doesn't have, or that differ from it (a ne
 ## Related skills
 
 - **bookkeeping-ops-context** — reads the business setup, accounts and deadlines first, and takes back each finished month and any new details
+- **quarterly-tax-set-aside** — once income and costs are sorted, works out each quarter's safe payment and what to set aside
 
-Coming next in this library: a quarterly tax set-aside skill for freelancers whose real question is what to set aside, and a loan-ready books skill for owners who need lender-ready statements once they're caught up.
+Coming next in this library: a loan-ready books skill for owners who need lender-ready statements once they're caught up.

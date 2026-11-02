@@ -1,5 +1,9 @@
 # Versions
 
+## 1.2.2 — November 2, 2026
+
+- **catch-up-plan** now works through the months a deadline needs from oldest to newest, since each month's ending balance starts the next, and for a loan ends by pulling the profit and loss and balance sheet for the same date
+
 ## 1.2.1 — November 1, 2026
 
 - **catch-up-plan** now says the 120-day rule comes from SBA's standard 7(a) checklist and that smaller SBA loans can follow the lender's own checklist, so the lender's list comes first

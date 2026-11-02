@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.2.1
+  version: 1.2.2
 ---
 
 # Catch-up plan
@@ -115,8 +115,9 @@ If they have more than 1,000 transactions a month, recommend help before timing 
 
 1. **Get every statement downloaded**, from every account on the Accounts tab.
 2. **Fix starting balances** if step 5 found a mismatch.
-3. **Finish the months the deadline needs.** For a tax return, that's the full tax year. For a loan, it's the latest months plus year-to-date. For an IRS letter, it's the year named in the letter.
+3. **Finish the months the deadline needs.** For a tax return, that's the full tax year. For a loan, it's the latest months plus year-to-date. For an IRS letter, it's the year named in the letter. Work through these months oldest to newest, since each month's ending balance is the next month's starting balance.
 4. **Then fill in the rest**, oldest first.
+5. **For a loan, pull the profit and loss and the balance sheet for the same end date**, inside the lender's window, once the last month is matched to the bank.
 
 Within each month, in this order:
 

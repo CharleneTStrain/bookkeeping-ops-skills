@@ -1,5 +1,9 @@
 # Versions
 
+## 1.3.1 — November 2, 2026
+
+- **quarterly-tax-set-aside** corrects how it describes self-employment tax and credits: it's figured separately from income tax, refundable credits can offset it at filing, and the set-aside keeps the full 14% until a CPA says otherwise. It also points to the adjusted gross income line on the 2025 Form 1040
+
 ## 1.3.0 — November 2, 2026
 
 - New skill, **quarterly-tax-set-aside**: a quick path to the next due date and safe payment (from last year's return, using the IRS's own penalty rule), a set-aside rate on profit built from self-employment tax, the person's top federal bracket and their state's rate, spouse withholding as an option, uneven-income and income-drop flags, what to do if you already owe, loan notes, and how to record tax payments, delivered as an Excel workbook

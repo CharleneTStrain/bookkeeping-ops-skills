@@ -2,7 +2,7 @@
 name: quarterly-tax-set-aside
 description: Works out what a freelancer or self-employed person should pay the IRS each quarter to stay clear of the underpayment penalty, what to set aside from what they earn, and what to do if they already owe or missed payments. Use when someone says "how much should I set aside for taxes," "do I need to pay quarterly taxes," "I missed my quarterly payments," "I owe the IRS and can't pay it all," "I just went freelance," or "what do I pay on January 15." Produces an Excel workbook with the safe payment for each quarter, a set-aside rate and log, a payment tracker, and options if they owe.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Quarterly tax set-aside
@@ -65,7 +65,7 @@ The January 15 payment can be skipped if they file their full return and pay eve
 
 The IRS doesn't charge the underpayment penalty if payments and withholding cover the smaller of 90% of this year's tax or 100% of last year's. This skill uses the last-year route, because it's known today and doesn't require guessing this year's income.
 
-1. **Find last year's total tax** on their federal return: the line labeled "total tax" (line 24 on recent Form 1040s; check the label, since line numbers change). Note last year's adjusted gross income too. The IRS's exact prior-year figure can differ slightly when refundable credits are involved, so add "Confirm last year's tax figure for the safe payment" to the CPA questions tab.
+1. **Find last year's total tax** on their federal return: the line labeled "total tax" (line 24 on recent Form 1040s; check the label, since line numbers change). Note last year's adjusted gross income too (line 11a on the 2025 Form 1040). The IRS's exact prior-year figure can differ slightly when refundable credits are involved, so add "Confirm last year's tax figure for the safe payment" to the CPA questions tab.
 2. **Pick the percentage:** 100% of last year's total tax, or 110% if last year's adjusted gross income was over $150,000 ($75,000 if married filing separately).
 3. **Subtract withholding expected this year** from any job, theirs or a joint-filing spouse's.
 4. **Divide what's left by 4.** That's each quarter's safe payment. It only works if each payment arrives by its due date.
@@ -85,13 +85,13 @@ The safe payment keeps them clear of the penalty. The set-aside is a savings hab
 
 Build the rate from three parts:
 
-1. **Self-employment tax: 14%.** It's 15.3% (12.4% Social Security plus 2.9% Medicare) on 92.35% of profit, which works out to 14.13%. Tax credits like the child tax credit don't reduce it, so it applies even when a family pays little income tax. The Social Security part stops at a yearly cap ($184,500 for 2026; look it up each year). Above the cap, use about 2.7% instead.
+1. **Self-employment tax: 14%.** It's 15.3% (12.4% Social Security plus 2.9% Medicare) on 92.35% of profit, which works out to 14.13%. It's figured separately from income tax, so it still applies when deductions and credits bring income tax close to zero. Refundable credits (like the refundable part of the child tax credit) can offset it at filing time, but that's for the CPA to work out, so the set-aside keeps the full 14%. The Social Security part stops at a yearly cap ($184,500 for 2026; look it up each year). Above the cap, use about 2.7% instead.
 2. **Federal income tax: the top bracket they landed in last year.** Use last year's taxable income and filing status with the current year's bracket table (look it up and cite it). Freelance profit stacks on top of any other household income, so it's taxed at the top bracket, not the household's average rate.
 3. **State income tax:** the state's rate, if it has one (Colorado: 4.4% for 2026).
 
 Add the three and round to the nearest whole percent. Example: married, last year's taxable income in the 12% bracket, in Colorado: 14% + 12% + 4.4% = 30%.
 
-This rate runs a little high on purpose. Two deductions lower the real bill: half of the self-employment tax, and the 20% qualified business income deduction, which is now permanent. A CPA can trim the rate once they see the year. Credits for children can bring the income tax part down too, but never the 14%.
+This rate runs a little high on purpose. Two deductions lower the real bill: half of the self-employment tax, and the 20% qualified business income deduction, which is now permanent. A CPA can trim the rate once they see the year. Credits for children can bring the income tax part down too; whether any of them also offset the 14% is a CPA question.
 
 **Apply it to profit, not sales:** money in minus the costs of earning it. For a freelancer, that's close to every payment. For anyone who buys inventory or materials, it's what's left after paying for them; applying the rate to gross sales would pull out cash they need to restock. If they don't track costs yet, apply it to each payment only if they're a service business; product businesses should do **catch-up-plan** first.
 

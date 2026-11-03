@@ -1,5 +1,11 @@
 # Versions
 
+## 1.4.0 — November 3, 2026
+
+- **catch-up-plan** adds an S-corp books section: an owner payroll check up front (with December 31 as the last day to pay owner wages for the year), S-corp owner accounts in place of owner draws, a five-way sort for owner payments, how to book payroll once, owner health insurance on the W-2, reimbursement plans, owner loans, and a year-end tie-out
+- Adds payroll deadlines (Form 941, W-2, Form 940, state unemployment with Colorado as the example), the per-shareholder penalty on late S-corp returns, and checking that last year's CPA adjustments were posted
+- New rules: never suggest an owner salary amount, never relabel past distributions as wages, never backdate payroll
+
 ## 1.3.1 — November 2, 2026
 
 - **quarterly-tax-set-aside** corrects how it describes self-employment tax and credits: it's figured separately from income tax, refundable credits can offset it at filing, and the set-aside keeps the full 14% until a CPA says otherwise. It also points to the adjusted gross income line on the 2025 Form 1040

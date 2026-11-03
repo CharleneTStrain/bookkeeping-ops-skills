@@ -2,7 +2,7 @@
 name: catch-up-plan
 description: Turns months of unfinished bookkeeping into a dated catch-up plan and Excel workbook, ordered by the nearest deadline. Use when a small business owner, freelancer or solo operator says "I'm behind on my books," "I haven't done my bookkeeping in months," "my accountant needs my numbers," "my bookkeeper quit," "I got a letter from the IRS," "I need my books done for a loan," or has a tax deadline coming and unfinished books. Produces a workbook with the backlog, a week-by-week plan, a do-it-yourself vs. hire estimate, and questions for their CPA.
 metadata:
-  version: 1.3.0
+  version: 1.4.0
 ---
 
 # Catch-up plan
@@ -36,6 +36,7 @@ After the two questions, place them in one of three paths. Ask one question if i
 
 - **Freelancer or solo with one account and no bookkeeping software.** Use the light path: one account, a simple spreadsheet instead of six tabs, and no categories beyond the ones on the Schedule C tax form. If their real question is "how much do I owe or set aside?", sort the income and expenses first, then hand off to **quarterly-tax-set-aside**.
 - **Small business (the standard path).** Everything below.
+- **S-corp.** The standard path plus the S-corp books section after step 6. Ask about owner payroll in step 4, not at the end: it's the item with a hard December 31 deadline.
 - **Seeking a loan, or more than 1,000 transactions a month.** Use the standard path to get current. Lenders usually also want statements prepared on an accrual basis (income and costs counted when earned or owed, not when cash moves), a list of who owes the business money and whom it owes, and a list of existing loans. Put "Ask your CPA whether your books need to be on an accrual basis for the lender" on the CPA questions tab.
 
 ## 3. Confirm the deadline
@@ -47,15 +48,20 @@ After the two questions, place them in one of three paths. Ask one question if i
 | S-corp or partnership return | March 15 (extension: September 15) | IRS |
 | Quarterly estimated taxes | April 15, June 15, September 15, January 15 | IRS |
 | 1099-NEC forms to contractors and the IRS | January 31 | IRS |
+| S-corp owner wages for the year | December 31 (last day wages can be paid for that year) | IRS |
+| Payroll reports (Form 941) | April 30, July 31, October 31, January 31 | IRS |
+| W-2 and W-3 forms, and the yearly unemployment return (Form 940) | January 31 | IRS |
+| State payroll and unemployment reports | Varies; Colorado's unemployment report is due the last day of the month after each quarter | State |
 | IRS or state letter | The response date printed on the letter | IRS or state |
 | Loan application | The date the lender gave | Lender |
 | Accountant request | The date the CPA gave | CPA |
 
 Look up this year's actual dates on IRS.gov before using them: dates move to the next business day when they fall on a weekend or holiday, and disaster areas sometimes get extensions. As of November 2026, the next ones are:
 
+- December 31, 2026: last day an S-corp can pay its owner 2026 wages through payroll
 - January 15, 2027: last 2026 quarterly estimated payment
-- February 1, 2027: 1099-NEC forms for 2026 (January 31 is a Sunday)
-- March 15, 2027: S-corp and partnership returns for 2026
+- February 1, 2027: 1099-NEC forms, W-2s and W-3, and the fourth-quarter 2026 payroll report (Form 941) (January 31 is a Sunday). Form 940 is usually due the same day; confirm.
+- March 15, 2027: S-corp and partnership returns for 2026. A late S-corp return carries a penalty for each shareholder for each month it's late, even when no tax is due, so this date is firm.
 - April 15, 2027: individual and single-member LLC returns for 2026, and the first 2027 quarterly payment
 - October 15, 2027: extended individual returns
 
@@ -75,6 +81,7 @@ Ask for whatever the context file doesn't already have, together in one message:
 - What software are the books in now, if any? Do they still have access?
 - Did a bookkeeper or service do this before? Do they have a copy of everything they did?
 - Is there anything scary in the pile: an IRS or state letter, missed payroll filings, unpaid sales tax, missed quarterly payments?
+- **For an S-corp:** does the owner get paid through payroll? Is there a payroll provider, and were the quarterly payroll reports filed? If the owner has only been moving money to themselves by transfer, flag it on the Summary tab and the CPA questions tab right away (see S-corp books).
 
 If a provider shut down or vanished, the first task is getting their data out: statements straight from each bank, plus whatever exports the old provider allows. Don't plan around data they can't reach.
 
@@ -88,6 +95,8 @@ Before catching up any month, make sure the last finished month is actually righ
 
 For a loan, this check matters twice: lenders compare the books against the tax returns, and for SBA 7(a) loans over $500,000 they must check the numbers against IRS tax transcripts and resolve any real gap before closing.
 
+Also check that last year's year-end adjustments from the CPA (the changes they made when preparing the return) were posted to the books. Unposted adjustments are a common reason opening balances don't match.
+
 If anything doesn't match, make "Fix starting balances" the first row of the Plan and add the mismatch to the CPA questions tab. If there are no prior books, the starting point is the opening balance on the first statement in the backlog.
 
 ## 6. Set up before sorting
@@ -97,6 +106,26 @@ Do these once, before any month gets sorted:
 1. **Set up the categories (chart of accounts).** Use the software's default list for their industry, or the Schedule C categories on the light path. Add only what's missing.
 2. **Record credit cards and loans as what's owed, not as spending.** Card payments and loan payments are transfers, not expenses. Only the interest on a loan is an expense.
 3. **Mark transfers between their own accounts as transfers**, so the same money isn't counted twice.
+4. **For an S-corp, set up the owner accounts** from the S-corp books section before sorting anything.
+
+## S-corp books
+
+An S-corp's books treat the owner differently from a sole proprietor's. Do this section whenever the business is an S-corp. The bookkeeper finds and sorts; the CPA decides amounts.
+
+1. **Check for owner payroll first.** The IRS requires an S-corp to pay an owner who works in the business a reasonable salary through payroll before taking other money out, and it can reclassify those other payments as wages. Look for a payroll provider, an officer compensation account and filed payroll reports. If the owner has only taken transfers:
+   - Flag it on the Summary tab and the CPA questions tab now.
+   - Before December 31, there's still time to set up payroll and pay the owner wages for this year. Wages count in the quarter they're paid, so a December wage goes on the fourth-quarter payroll report. The CPA decides the amount.
+   - Once the year closes, tax pros say money already taken can't be relabeled as wages; the fix is payroll going forward. Confirm with the CPA.
+   - Some states treat owners as employees for unemployment premiums even when payroll was never run. Colorado, for example, counts corporate officers as employees and includes S-corp distributions in wages for unemployment. Add the state question to the CPA tab.
+2. **Set up the owner accounts:** shareholder distributions, shareholder contributions, loan to shareholder, loan from shareholder, common stock, additional paid-in capital, retained earnings, officer compensation (the owner's wages), payroll tax expense, and payroll liabilities. Retire "owner draw"; that's a sole proprietor's account.
+3. **Sort every payment between the owner and the business into one of five:** wages (only through payroll), a distribution, a reimbursement, a loan (to or from the owner), or a contribution (money the owner put in). Personal spending from the business account is a distribution. So are the owner's personal tax payments. Distributions are never business expenses and never payroll.
+4. **Book payroll from the payroll report, once.** Gross wages go to officer compensation, the company's share of payroll taxes to payroll tax expense, withholdings and taxes owed to payroll liabilities, and net pay comes out of the bank. Payroll liabilities should drop to zero after each tax deposit. If the payroll provider already posts to the books, don't also record the bank withdrawals as expenses, or payroll gets counted twice.
+5. **Owner health insurance.** If the company paid or reimbursed the owner's health insurance, it has to show up on the owner's W-2 (box 1 only, not the Social Security and Medicare boxes), or the owner loses their personal deduction. Check this before the last payroll of the year so the payroll provider can add it. If the owner paid premiums personally and wasn't reimbursed, ask the CPA.
+6. **Reimbursements.** Paying the owner back for home office, mileage or phone costs is tax-free only under a written reimbursement plan (an accountable plan): a business purpose, records turned in reasonably fast, and any extra paid back. No written plan or no receipts: don't book them as tax-free; flag for the CPA.
+7. **Loans between the owner and the company.** Keep money lent to the owner and money borrowed from the owner in two separate accounts, each backed by a written note and real repayments. No note or no repayments: flag for the CPA.
+8. **Basis.** Distributions above what the owner has put in and earned can be taxable. The bookkeeper doesn't track this; give the CPA the year's totals for distributions, contributions and owner loans, and they'll handle it (Form 7203).
+
+**Year-end tie-out:** the payroll reports and W-2s match the payroll accounts, payroll liabilities are cleared, and the totals for distributions, contributions and owner loans are on the CPA questions tab. Look up this year's Social Security wage limit ($184,500 for 2026) and state payroll rates (Colorado's paid leave premium is 0.88% for 2026) before using them.
 
 ## 7. Size the backlog
 
@@ -122,7 +151,7 @@ If they have more than 1,000 transactions a month, recommend help before timing 
 Within each month, in this order:
 
 1. **Sort** each transaction into a category.
-2. **Separate personal from business.** Personal spending from a business account goes to owner draws (money the owner took out), not expenses.
+2. **Separate personal from business.** Personal spending from a business account goes to owner draws (money the owner took out), not expenses. For an S-corp, it goes to shareholder distributions instead.
 3. **Check the revenue.** Payment processors deposit money with their fees already taken out, and refunds come back later. Record the full sale amount as income and the fee as an expense, so income in the books matches the processor's monthly report, not the bank deposit. Check that refunds and chargebacks are recorded, and that no transfer between their own accounts is counted as income. Processors send a 1099-K only above the federal threshold (over $20,000 and over 200 transactions; some states set lower thresholds), so don't wait for a form: all of it is income whether or not one arrives.
 4. **Match to the bank.** The month's ending balance in the books must match the statement exactly, to the cent.
 5. **Lock the month if the software allows it**, so nothing in it changes by accident. QuickBooks calls this a closing date and Xero calls it a lock date. Some programs can't lock past months (Wave, for one). Then save a PDF of the month's profit and loss report next to that month's statement as the record of what was finished, and tell them not to edit that month without noting why. Either way, mark the month Done.
@@ -159,9 +188,9 @@ Put these on the CPA questions tab instead of answering them:
 - Sales tax owed in any state
 - Whether to file an extension or set up an IRS payment plan
 - Whether the books need to be on an accrual basis (for a lender)
-- Anything about S-corp owner pay
+- For an S-corp: the owner's salary amount, any catch-up wage before December 31, late or corrected payroll reports, past years when the owner was paid only by transfer, state unemployment on owner pay, owner health insurance paid personally, reimbursements without a written plan, owner loans without a note, and the owner's basis
 
-Never estimate penalties or say whether someone will owe.
+Never estimate penalties or say whether someone will owe. Never suggest a salary amount or a salary-to-distribution split.
 
 ## 11. Build the workbook
 
@@ -194,6 +223,7 @@ The last tab is how this doesn't happen again:
 - **Every month, within 10 days of month end:** match each account to its statement, check revenue against the processor's report, and lock the month (or save its report, if the software can't lock).
 - **Every quarter:** set aside money for taxes, pay quarterly estimates, and export a copy of the books.
 - **Always:** keep business money in its own bank account and card.
+- **S-corp, every payroll:** check payroll liabilities clear after each deposit. **Every December:** confirm owner wages for the year are paid through payroll and owner health insurance is on the W-2.
 
 ## 13. Deliver
 
@@ -214,6 +244,7 @@ If they gave details the context file doesn't have, or that differ from it (a ne
 - If they say they're embarrassed, say once that this is common and move straight to the plan.
 - Never imply they're behind on purpose or doing it wrong. State where they are and the next step.
 - Never estimate taxes or penalties. That's the CPA's job.
+- For an S-corp, never suggest a salary amount, never relabel past distributions as wages, and never backdate payroll.
 - Never ask for or store account numbers, tax ID numbers or passwords.
 - End every reply with one concrete next step they can do today.
 
